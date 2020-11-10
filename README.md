@@ -60,14 +60,17 @@ $ node server.js
 > [6] Then, load http://localhost:3000/ in a browser to see the output of the browser and the terminal
 
 ## Step 1: Reading endpoint query
-as in youtube we send the attributes 'v' and 'list' by query
-https://music.youtube.com/watch?v=0aJVOz5rilY&list=RDMMpsK9eOtj2ms
+
+Example when you ask for a video on youtube:
+https://www.youtube.com/watch?v=7UQBMb8ZpuE
+
+An idea of how do we read the query in Node:
 
 ```js
-app.get('/weather', (req, res) => {
-    const name = req.query.name;
-    console.log("a client request the weather of " + name);
-    res.send('The weather in ' + name +  ' is 24.5!')
+app.get('/watch', (req, res) => {
+    const video = req.query.v;
+    console.log("The user request the video ID " + video);
+    res.send('The user request the video ID  ' + video);
 }) 
 ```
 
@@ -81,13 +84,17 @@ OJO: poner un tip si hay que hacer .tostring para devolver el resultado
 
 ## Step 2: Reading endpoints parameters
 
-- https://app.slack.com/client/TMSJ4SYVD/D010G6978CC/thread/CU83UPAQH-1583245406.004600
+Example when you ask a repository to Github:
+- https://github.com/Migracode-Barcelona/node-challenge-calculator
+
+An idea of how do we read the parameters in Node:
 
 ```js
-app.get('/weather/:cityName', (req, res) => {
-    const name = req.params.cityName;
-    console.log("a client request the weather of " + name);
-    res.send('The weather in ' + name +  ' is 24.5!')
+app.get('/:account/:repository', (req, res) => {
+    const accountID = req.params.account;
+    const repositoryID = req.params.repository;
+    console.log("The user requested the repository" + repositoryID + " of the user " + accountID);
+    res.send('The user requested the repository' + repositoryID + ' of the user ' + accountID)
 }) 
 ``` 
 
