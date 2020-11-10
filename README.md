@@ -54,7 +54,7 @@ has been added as a dependency. It will look like this:
 > [5] Run the app with the following command:
 
 ```js
-$ node app.js
+$ node server.js
 ```
 
 > [6] Then, load http://localhost:3000/ in a browser to see the output of the browser and the terminal
