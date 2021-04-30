@@ -80,7 +80,7 @@ Build the next endpoints of our calculator:
 - http://localhost:3000/multiply?value1=10&value2=2
 - http://localhost:3000/divide?value1=10&value2=2
 
-OJO: poner un tip si hay que hacer .tostring para devolver el resultado
+NOTE: put a comment if you have to do .toString to return the result
 
 ## Step 2: Reading endpoints parameters
 
